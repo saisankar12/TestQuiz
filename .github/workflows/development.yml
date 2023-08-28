@@ -171,17 +171,7 @@ jobs:
         with:
           name: debug-apk
 
-      - name: Installing App Center CLI
-        run: npm install -g appcenter-cli@2.13.10
-
-      - name: Upload APK to App Center
-        run: |
-          appcenter distribute release \
-          --token ${{secrets.APPCENTER_API_TOKEN}} \
-          --app saisankar75/ActionsTest \
-          --group SaiSankar \
-          --file /Users/runner/work/actionstest/actionstest/app-debug.apk \
-          --debug
+      
 
       - name: Tag last green build
         run: |
