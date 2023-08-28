@@ -171,15 +171,6 @@ jobs:
         with:
           name: debug-apk
 
-      
-
-      - name: Tag last green build
-        run: |
-          export HEAD_HASH=$(git rev-parse --short HEAD)
-          export GREEN_TAG="green-$HEAD_HASH"
-          git tag $GREEN_TAG
-          git push origin $GREEN_TAG
-  
 
   sonarqube:
     name: SonarQube Trigger
